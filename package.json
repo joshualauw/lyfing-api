@@ -1,0 +1,42 @@
+{
+    "name": "emilia-backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "_moduleAliases": {
+        "@": "dist"
+    },
+    "scripts": {
+        "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+        "start": "pm2 start dist/server.js --name lyfing-api --attach && pm2 monit",
+        "build": "rimraf dist && tsc",
+        "stop": "pm2 stop lyfing-api",
+        "restart": "npm run stop && npm run build && npm run start"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "class-transformer": "^0.5.1",
+        "class-validator": "^0.14.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "inversify": "^6.0.2",
+        "inversify-express-utils": "^6.4.6",
+        "module-alias": "^2.2.3",
+        "mysql2": "^3.11.0",
+        "pm2": "^5.4.2",
+        "reflect-metadata": "^0.2.2",
+        "socket.io": "^4.7.5",
+        "typeorm": "^0.3.20"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.17",
+        "@types/express": "^4.17.21",
+        "@types/module-alias": "^2.0.4",
+        "@types/node": "^22.5.0",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.5.4"
+    }
+}
